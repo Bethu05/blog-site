@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}{% endblock title %}
+{% block content %}
+<!-- <p>{{ perms.blog }}</p> -->
+{% if tag_obj %}
+<p>Posts Tagged with <strong>{{ tag_obj.name }}</strong></p>
+{% endif %}
+<!-- Display Content -->
+
+{% for post in posts %}
+{% include 'blog/_post.html' with items=posts %}
+{% endfor %}
+
+<!-- pagination -->
+{% include '_pagination.html' with items=posts %}
+
+{% endblock content %}

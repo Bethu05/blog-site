@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load i18n %} {% load account socialaccount %}
+{% block head_title %}{% trans "Sign In" %}
+{% endblock %}
+{% block content %}
+<div class="account">
+  <h2 class="account-section">{% trans "Login" %}</h2>
+  <form class="login" method="POST" action="{% url 'account_login' %}">
+    {% csrf_token %}
+    <!-- {{ form.as_p }} -->
+    {% for field in form %}
+    <div class="user-box">
+      <!-- {{ field }} {{ field.label_tag }} -->
+      {{ field }} {{ field.label_tag }}
+      {{ field.errors }}
+
+    </div>
+    {% endfor %}
+
+    {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    {% endif %}
+    <!-- <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a> -->
+    <p><a class="link" href="#">Forgot Password</a></p>
+    <div class="account-submit">
+      <button type="submit">
+        <span></span><span></span><span></span><span></span>
+        {% trans "Login" %}
+      </button>
+    </div>
+  </form>
+  {% if socialaccount_providers %}
+  <p>
+    {% blocktrans with site.name as site_name %}Please sign in with one of your
+    existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a> for
+    a {{ site_name }} account and sign in below:{% endblocktrans %}
+  </p>
+
+  <div class="socialaccount_ballot">
+    <ul class="socialaccount_providers">
+      {% include "socialaccount/snippets/provider_list.html" with process="login"
+      %}
+    </ul>
+
+    <div class="login-or">{% trans 'or' %}</div>
+  </div>
+
+  {% include "socialaccount/snippets/login_extra.html" %}
+  {% else %}
+  <p class="account-notregistered">
+    {% blocktrans %}Don't have an account ?
+    <a class="link" href="{{ signup_url }}">Sign up Here</a> {% endblocktrans %}
+  </p>
+  {% endif %}
+</div>
+
+{% endblock %}

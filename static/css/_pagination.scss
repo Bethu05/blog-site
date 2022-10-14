@@ -1,0 +1,32 @@
+.pagination{
+  text-align: center;
+  margin: 2em 0; 
+ }
+ 
+ .pagination-current, .pagination-total{
+   padding: 0.5em 0.8em;
+   border-radius: 2px;
+   color: #fff;
+   background-color: #33aaa4;
+ }
+ .pagination-total{
+   background-color: #b9b9b9;
+ }
+ 
+ .pagination-action{
+   margin: 0 0.1em;
+   display: inline-block;
+   padding: 0.5em 0.5em;
+   color: #b9b9b9;
+   font-size: 1.3em;
+ 
+ }
+ 
+ .pagination-of{
+   color: #b9b9b9;
+   padding: 0 1em;
+ }
+ .pagination-action:hover{
+   color: #33aaa4;
+ }
+ 

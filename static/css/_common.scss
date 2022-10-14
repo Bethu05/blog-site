@@ -1,0 +1,54 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Ubuntu', sans-serif;
+  // padding-top: 50px;
+  // background-color: #929292;
+  // background: linear-gradient(#141e30, #243b55);
+}
+html{
+  overflow-y: scroll;
+}
+a{
+  // color: #000;
+  text-decoration: none;
+}
+p{
+  line-height: 1.5em;
+}
+h1,h2{
+  color: #333;
+  margin-top: 0;
+}
+.tags-title{
+  margin: 1.5em;
+  font-size: 1.3em;
+}
+
+.button, button[type='submit'], input[type='submit']{
+  background-color: #558fe7;
+  // border-color: #558fe7;
+  // border-radius: 1px;
+  padding: 0.8em 1.5em;
+  color: #fff;
+  display: inline-block;
+  margin: 0.5em 0.5em 0.5em 0;
+  text-decoration: none;
+  width: auto;
+}
+
+.warning{
+  background-color: #E75555;
+}
+
+
+
+
+
+
+
+
