@@ -10,7 +10,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-$y3+jq)=1v@noe)ilptdkefiu*&@#bl6v@a^h%kv%#ohm1mg7a'
+# SECRET_KEY = 'django-insecure-$y3+jq)=1v@noe)ilptdkefiu*&@#bl6v@a^h%kv%#ohm1mg7a'
+SECRET_KEY = '%0p-yl@!&yhv6*8dn&nv$e4k#6dr&3b6zd$x2r84#7j1g)0)zt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -41,9 +42,11 @@ INSTALLED_APPS = [
 
 # authentication
 SITE_ID = 1
+
 LOGIN_REDIRECT_URL = '/'
 
 MEDIA_URL = '/media/'
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MIDDLEWARE = [
@@ -129,6 +132,7 @@ USE_TZ = True
 
 # ? using static files like css
 STATIC_URL = '/static/'
+
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 
