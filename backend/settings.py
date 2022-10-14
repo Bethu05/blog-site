@@ -148,7 +148,7 @@ ENV = os.environ.get('ENV')
 
 if ENV == 'production':
     ALLOWED_HOSTS = ['.herokuapp.com']
-    SECRET_KEY = os.environment.get('SECRET_KEY')
+    SECRET_KEY = os.environ.get('SECRET_KEY')
     DEBUG = int(os.environ.get('DEBUG'))
     import dj_database_url
     DATABASES['default'] = dj_database_url.config(conn_max_age=600)
